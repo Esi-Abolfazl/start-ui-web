@@ -154,14 +154,20 @@ export const PaginationButtonNextPage: FC<
 
 export const PaginationInfo = ({ ...rest }) => {
   const { t } = useTranslation();
-  const { firstItemOnPage, lastItemOnPage, totalItems, isLoadingPage } =
-    useContext(PaginationContext);
+  const {
+    firstItemOnPage,
+    lastItemOnPage,
+    pageSize,
+    totalItems,
+    isLoadingPage,
+  } = useContext(PaginationContext);
   const translationProps = {
     t,
     values: {
-      firstItemOnPage,
-      lastItemOnPage,
-      totalItems,
+      firstItemOnPage: !lastItemOnPage ? 0 : firstItemOnPage,
+      lastItemOnPage:
+        isLoadingPage && !lastItemOnPage ? pageSize : lastItemOnPage,
+      totalItems: !isLoadingPage ? totalItems : '--',
     },
     components: {
       span: <span />,
