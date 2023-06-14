@@ -35,6 +35,7 @@ export const LoginModalInterceptor = () => {
       (r) => r,
       (error) => {
         if (
+          !error.config.url.contains('https://api.github.com') &&
           error?.response?.status === 401 &&
           pathnameRef.current !== '/login'
         ) {

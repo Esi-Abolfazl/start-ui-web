@@ -22,6 +22,8 @@ const envSchema = z.object({
 
   NEXT_PUBLIC_DEV_ENV_NAME: z.string().optional(),
   NEXT_PUBLIC_DEV_ENV_COLOR_SCHEME: z.string().optional(),
+
+  NEXT_PUBLIC_GITHUB_ACCESS_TOKEN: z.string().optional(),
 });
 
 /**
