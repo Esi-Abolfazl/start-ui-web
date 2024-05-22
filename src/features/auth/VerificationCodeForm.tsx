@@ -61,7 +61,7 @@ export const VerificationCodeForm = ({
         size="lg"
         label={t('auth:data.verificationCode.label')}
         helper={t('auth:data.verificationCode.helper')}
-        autoSubmit
+        autoSubmit={autoSubmit}
         autoFocus
       />
       <HStack spacing={8}>
